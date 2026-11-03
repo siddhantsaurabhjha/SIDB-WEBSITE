@@ -27,16 +27,18 @@ export const siteConfig = {
   engine: 'Chromium 156 / Electron 45',
   
   // Domains and canonical URLs
-  canonicalDomain: 'https://sidbbrowser.com', // Configurable domain placeholder
-  fallbackNetlifyDomain: 'https://sidb-browser.netlify.app',
+  canonicalDomain: 'https://sidb.netlify.app',
+  websiteRepo: 'https://github.com/siddhantsaurabhjha/SIDB-WEBSITE',
 
   // GitHub & Documentation Links
   links: {
     github: 'https://github.com/siddhantsaurabhjha/SIDB',
+    websiteRepo: 'https://github.com/siddhantsaurabhjha/SIDB-WEBSITE',
     releases: 'https://github.com/siddhantsaurabhjha/SIDB/releases',
     latestRelease: 'https://github.com/siddhantsaurabhjha/SIDB/releases/tag/v0.1.0',
     userGuide: 'https://github.com/siddhantsaurabhjha/SIDB/blob/main/docs/USER_GUIDE.md',
     progressReport: 'https://github.com/siddhantsaurabhjha/SIDB/blob/main/progress.md',
+    license: 'https://github.com/siddhantsaurabhjha/SIDB/blob/main/LICENSE',
     issues: 'https://github.com/siddhantsaurabhjha/SIDB/issues',
     checksums: 'https://github.com/siddhantsaurabhjha/SIDB/releases/download/v0.1.0/SHA256SUMS.txt',
   },
@@ -97,16 +99,16 @@ export const siteConfig = {
   requirements: {
     windows: {
       os: 'Windows 10 / 11 (64-bit)',
-      cpu: 'x86-64 compatible processor',
-      ram: '4 GB minimum recommended',
-      storage: '~400 MB for extraction and user profiles',
+      cpu: 'Not officially specified (Standard 64-bit x86-64)',
+      ram: 'Not officially specified (Standard 64-bit desktop)',
+      storage: '~400 MB disk space (Extracted binary & user profile data)',
       notes: 'No administrator rights required. SmartScreen notice details provided below.',
     },
     linux: {
-      os: 'Ubuntu 24.04+ / Debian 12+, Fedora 39+, or modern glibc 2.35+ distro',
-      cpu: 'x86-64 compatible processor',
-      ram: '4 GB minimum recommended',
-      storage: '~400 MB for installation',
+      os: 'Ubuntu 24.04+ / Debian 12+, Fedora 39+, or glibc 2.35+ 64-bit desktop',
+      cpu: 'Not officially specified (Standard 64-bit x86-64)',
+      ram: 'Not officially specified (Standard 64-bit desktop)',
+      storage: '~400 MB disk space (Installation & user profile database)',
       notes: 'X11 or Wayland with standard desktop graphics acceleration.',
     },
   },

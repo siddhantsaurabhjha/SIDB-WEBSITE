@@ -2,10 +2,6 @@
 import Icon from './Icon.astro';
 import { siteConfig } from '../data/config';
 
-interface Props {
-  currentPath?: string;
-}
-
 const navLinks = [
   { name: 'Browser', href: '#showcase' },
   { name: 'Features', href: '#features' },
@@ -15,13 +11,13 @@ const navLinks = [
 ];
 ---
 
-<header class="sticky top-0 z-50 w-full backdrop-blur-xl bg-[#07080b]/80 border-b border-white/[0.08] transition-colors duration-200">
+<header class="sticky top-0 z-50 w-full backdrop-blur-xl bg-[#060709]/85 border-b border-white/[0.08] transition-colors duration-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 sm:h-18">
       
       <!-- Brand Logo & Wordmark -->
-      <a href="/" class="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-lg p-1" aria-label="SIDB Browser Home">
-        <div class="relative w-9 h-9 rounded-xl overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center p-0.5 shadow-sm group-hover:border-indigo-500/50 transition-colors">
+      <a href="/" class="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 rounded-lg p-1" aria-label="SIDB Browser Home">
+        <div class="relative w-9 h-9 rounded-xl overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center p-0.5 shadow-sm group-hover:border-violet-500/50 transition-colors">
           <img 
             src="/assets/brand/logo.png" 
             alt="SIDB Logo" 
@@ -33,9 +29,11 @@ const navLinks = [
           />
         </div>
         <div class="flex flex-col">
-          <span class="text-base font-semibold tracking-wider text-white flex items-center gap-1.5">
+          <span class="text-base font-semibold tracking-wider text-white flex items-center gap-2">
             SIDB
-            <span class="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">v0.1.0</span>
+            <span class="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-violet-500/10 text-violet-300 border border-violet-500/25">
+              {siteConfig.version}
+            </span>
           </span>
           <span class="text-[11px] text-slate-400 font-normal hidden sm:inline -mt-0.5">Desktop Browser</span>
         </div>
@@ -68,15 +66,15 @@ const navLinks = [
       <div class="hidden md:flex items-center gap-3">
         <a
           href={siteConfig.downloads.windows.downloadUrl}
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-medium text-slate-300 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] hover:border-white/[0.2] transition-all duration-150"
-          title="Direct Windows ZIP Download (152.2 MB)"
+          class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-medium text-slate-300 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/[0.18] transition-all duration-150"
+          title="Direct Windows x64 ZIP Download (152.2 MB)"
         >
-          <Icon name="download" size={14} class="w-3.5 h-3.5 text-indigo-400" />
+          <Icon name="download" size={14} class="w-3.5 h-3.5 text-violet-400" />
           <span>Windows ZIP</span>
         </a>
         <a
           href="#download"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 shadow-sm shadow-indigo-600/30 transition-all duration-150"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold text-white bg-violet-600 hover:bg-violet-500 shadow-sm shadow-violet-600/30 transition-all duration-150"
         >
           <span>Get SIDB</span>
           <Icon name="chevron-right" size={14} class="w-3.5 h-3.5" />
@@ -87,14 +85,14 @@ const navLinks = [
       <div class="flex items-center gap-2 md:hidden">
         <a
           href="#download"
-          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-violet-600 hover:bg-violet-500"
         >
           <span>Download</span>
         </a>
         <button
           id="mobile-menu-toggle"
           type="button"
-          class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/[0.06] border border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/[0.06] border border-transparent focus:outline-none focus:ring-2 focus:ring-violet-500"
           aria-label="Toggle Navigation Menu"
           aria-expanded="false"
           aria-controls="mobile-menu"
@@ -110,7 +108,7 @@ const navLinks = [
   <!-- Mobile Drawer / Dropdown -->
   <div 
     id="mobile-menu" 
-    class="hidden md:hidden border-t border-white/[0.08] bg-[#07080b]/95 backdrop-blur-2xl px-4 pt-3 pb-6 transition-all duration-200"
+    class="hidden md:hidden border-t border-white/[0.08] bg-[#060709]/95 backdrop-blur-2xl px-4 pt-3 pb-6 transition-all duration-200"
     role="region" 
     aria-label="Mobile Navigation"
   >
@@ -141,12 +139,12 @@ const navLinks = [
           href={siteConfig.downloads.windows.downloadUrl}
           class="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg text-xs font-medium text-slate-200 bg-white/[0.05] border border-white/[0.1]"
         >
-          <Icon name="download" size={14} class="w-3.5 h-3.5 text-indigo-400" />
+          <Icon name="download" size={14} class="w-3.5 h-3.5 text-violet-400" />
           Windows x64 ZIP (152.2 MB)
         </a>
         <a
           href="#download"
-          class="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500"
+          class="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-lg text-xs font-semibold text-white bg-violet-600 hover:bg-violet-500"
         >
           All Downloads & Linux Packages
         </a>
@@ -188,4 +186,3 @@ const navLinks = [
     }
   });
 </script>
-

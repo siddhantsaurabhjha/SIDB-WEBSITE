@@ -6,17 +6,40 @@ import { siteConfig } from '../data/config';
 <section id="about" class="py-20 md:py-28 border-t border-white/[0.08] relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <div class="max-w-3xl">
-      <div class="badge-neutral mb-3">Project Overview</div>
-      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-        About SIDB
-      </h2>
-      <p class="mt-4 text-base sm:text-lg text-slate-300/90 leading-relaxed">
-        SIDB is an independent desktop web browser project designed around personal workflow, user autonomy, and calm computing.
-      </p>
+    <!-- Section Header with Release Information Badge -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <div class="max-w-3xl">
+        <div class="badge-neutral mb-3">Project Overview</div>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+          About SIDB
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-slate-300/90 leading-relaxed">
+          SIDB is an independent desktop web browser project designed around personal workflow, user autonomy, and calm computing.
+        </p>
+      </div>
+
+      <!-- Release Information Card -->
+      <div class="shrink-0 p-4 rounded-2xl bg-white/[0.03] border border-white/[0.08] flex items-center gap-4">
+        <div>
+          <div class="text-[11px] font-mono uppercase tracking-wider text-slate-400">Release Specification</div>
+          <div class="text-sm font-semibold text-white mt-0.5">
+            SIDB {siteConfig.version} • Chromium 156
+          </div>
+        </div>
+        <a
+          href={siteConfig.links.latestRelease}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-2 rounded-xl bg-violet-600/10 hover:bg-violet-600/20 text-violet-400 border border-violet-500/20 transition-colors"
+          title="View GitHub Release"
+          aria-label="View GitHub Release"
+        >
+          <Icon name="external-link" size={16} class="w-4 h-4" />
+        </a>
+      </div>
     </div>
 
-    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       
       <div class="glass-card rounded-2xl p-6 space-y-3">
         <h3 class="text-base font-semibold text-white">Open Development</h3>
@@ -27,9 +50,9 @@ import { siteConfig } from '../data/config';
           href={siteConfig.links.github}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 text-xs text-indigo-400 hover:text-indigo-300 font-medium pt-2"
+          class="inline-flex items-center gap-1.5 text-xs text-violet-400 hover:text-violet-300 font-medium pt-2"
         >
-          <span>Explore repository</span>
+          <span>Explore browser repository</span>
           <Icon name="external-link" size={13} class="w-3.5 h-3.5" />
         </a>
       </div>
@@ -43,7 +66,7 @@ import { siteConfig } from '../data/config';
           href={siteConfig.links.progressReport}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 text-xs text-indigo-400 hover:text-indigo-300 font-medium pt-2"
+          class="inline-flex items-center gap-1.5 text-xs text-violet-400 hover:text-violet-300 font-medium pt-2"
         >
           <span>Read verification notes</span>
           <Icon name="external-link" size={13} class="w-3.5 h-3.5" />
@@ -59,7 +82,7 @@ import { siteConfig } from '../data/config';
           href={siteConfig.links.userGuide}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 text-xs text-indigo-400 hover:text-indigo-300 font-medium pt-2"
+          class="inline-flex items-center gap-1.5 text-xs text-violet-400 hover:text-violet-300 font-medium pt-2"
         >
           <span>Read user guide</span>
           <Icon name="external-link" size={13} class="w-3.5 h-3.5" />
@@ -70,4 +93,3 @@ import { siteConfig } from '../data/config';
 
   </div>
 </section>
-

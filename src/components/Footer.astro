@@ -53,25 +53,45 @@ const currentYear = new Date().getFullYear();
 
     </div>
 
-    <!-- Bottom Legal / Open Source Attributions -->
+    <!-- Bottom Legal / Open Source Attributions & Back to top -->
     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-slate-400">
       <div>
-        <p>© {currentYear} SIDB Browser. An independent open-source project.</p>
-        <p class="text-[11px] text-slate-400 mt-1">
+        <p>© {currentYear} SIDB Browser. An independent desktop browser project.</p>
+        <p class="text-[11px] text-slate-500 mt-1">
           Chromium is a trademark of Google LLC. Electron is a project of OpenJS Foundation. SIDB is not affiliated with Google or NVIDIA.
         </p>
       </div>
-      <div class="flex items-center gap-4 text-slate-400">
-        <a href={siteConfig.links.releases} target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 transition-colors">
-          Release v0.1.0 Assets
+      
+      <div class="flex flex-wrap items-center gap-4 text-slate-400">
+        <a href={siteConfig.links.latestRelease} target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 transition-colors">
+          Release v0.1.0
         </a>
         <span>•</span>
-        <a href={siteConfig.links.checksums} target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 transition-colors">
-          SHA256SUMS
+        <a href={siteConfig.links.license} target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 transition-colors">
+          License
         </a>
+        <span>•</span>
+        <a href={siteConfig.links.websiteRepo} target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 transition-colors">
+          Website Repo
+        </a>
+        <span>•</span>
+        <button
+          id="back-to-top-btn"
+          type="button"
+          class="hover:text-white inline-flex items-center gap-1 transition-colors focus:outline-none focus:underline"
+          aria-label="Scroll back to top of page"
+        >
+          <span>Back to top ↑</span>
+        </button>
       </div>
     </div>
 
   </div>
 </footer>
 
+<script>
+  const backToTopBtn = document.getElementById('back-to-top-btn');
+  backToTopBtn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>

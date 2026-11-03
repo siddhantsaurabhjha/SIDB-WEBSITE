@@ -32,13 +32,13 @@ const categoryIcons: Record<string, string> = {
     </div>
 
     <!-- Feature Cards Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
       {coreFeatures.map((feature) => (
         <div class="glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between group">
           <div>
             
             <div class="flex items-center justify-between mb-5">
-              <div class="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-indigo-400 group-hover:border-indigo-500/30 group-hover:bg-indigo-500/10 transition-colors">
+              <div class="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-violet-400 group-hover:border-violet-500/30 group-hover:bg-violet-500/10 transition-colors">
                 <Icon name={categoryIcons[feature.category] as any} size={20} class="w-5 h-5" />
               </div>
               <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">
@@ -50,7 +50,7 @@ const categoryIcons: Record<string, string> = {
               {feature.title}
             </h3>
 
-            <p class="mt-1 text-xs font-medium text-indigo-300/90">
+            <p class="mt-1 text-xs font-medium text-violet-300/90">
               {feature.tagline}
             </p>
 
@@ -62,7 +62,7 @@ const categoryIcons: Record<string, string> = {
             <ul class="mt-5 space-y-2 pt-4 border-t border-white/[0.05]">
               {feature.bulletPoints.map((point) => (
                 <li class="flex items-start gap-2 text-xs text-slate-300/90 leading-normal">
-                  <Icon name="check" size={13} class="w-3.5 h-3.5 text-indigo-400 shrink-0 mt-0.5" />
+                  <Icon name="check" size={13} class="w-3.5 h-3.5 text-violet-400 shrink-0 mt-0.5" />
                   <span>{point}</span>
                 </li>
               ))}
@@ -70,7 +70,7 @@ const categoryIcons: Record<string, string> = {
 
           </div>
 
-          <div class="mt-6 pt-3 flex items-center justify-between text-[11px] font-mono text-slate-400">
+          <div class="mt-6 pt-3 flex items-center justify-between text-[11px] font-mono text-slate-400 border-t border-white/[0.03]">
             <span>Desktop Native</span>
             <span class="text-emerald-400/90 flex items-center gap-1">
               <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span>
@@ -84,4 +84,3 @@ const categoryIcons: Record<string, string> = {
 
   </div>
 </section>
-

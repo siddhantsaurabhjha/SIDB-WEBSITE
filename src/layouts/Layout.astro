@@ -31,7 +31,7 @@ const ogImageURL = new URL(image, siteConfig.canonicalDomain).href;
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
-    <meta name="theme-color" content="#07080b" />
+    <meta name="theme-color" content="#060709" />
     <meta name="color-scheme" content="dark" />
     <meta name="robots" content="index, follow" />
 
@@ -54,16 +54,16 @@ const ogImageURL = new URL(image, siteConfig.canonicalDomain).href;
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/assets/brand/logo.png" />
 
-    <!-- Preload critical brand asset -->
+    <!-- Preload critical brand assets -->
     <link rel="preload" href="/assets/brand/logo.png" as="image" type="image/png" />
     <link rel="preload" href="/assets/screenshots/s1.png" as="image" type="image/png" />
   </head>
-  <body class="min-h-screen bg-[#07080b] text-slate-100 selection:bg-indigo-500/30 selection:text-white flex flex-col">
+  <body class="min-h-screen bg-[#060709] text-slate-100 selection:bg-violet-500/30 selection:text-white flex flex-col antialiased">
     
     <!-- Skip to main content for accessibility -->
     <a 
       href="#main-content" 
-      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-white"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-violet-600 text-white font-semibold rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-white"
     >
       Skip to content
     </a>
@@ -81,4 +81,3 @@ const ogImageURL = new URL(image, siteConfig.canonicalDomain).href;
 
   </body>
 </html>
-

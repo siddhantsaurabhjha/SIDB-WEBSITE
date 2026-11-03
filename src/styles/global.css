@@ -2,19 +2,19 @@
 
 @layer base {
   :root {
-    --color-bg-base: #07080b;
-    --color-bg-surface: #0e1118;
-    --color-bg-elevated: #151924;
-    --color-bg-card: rgba(16, 20, 30, 0.75);
+    --color-bg-base: #060709;
+    --color-bg-surface: #0c0e15;
+    --color-bg-elevated: #131722;
+    --color-bg-card: rgba(15, 18, 28, 0.75);
     --color-border: rgba(255, 255, 255, 0.08);
     --color-border-hover: rgba(255, 255, 255, 0.16);
-    --color-border-accent: rgba(99, 102, 241, 0.35);
+    --color-border-accent: rgba(139, 92, 246, 0.35);
     --color-text-main: #f8fafc;
     --color-text-muted: #94a3b8;
     --color-text-dim: #64748b;
-    --color-accent-primary: #6366f1;
-    --color-accent-secondary: #3b82f6;
-    --color-accent-cyan: #06b6d4;
+    --color-accent-purple: #8b5cf6;
+    --color-accent-indigo: #6366f1;
+    --color-accent-blue: #3b82f6;
   }
 
   html {
@@ -46,64 +46,66 @@
     height: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #08090c;
+    background: #060709;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1e2433;
+    background: #1c2130;
     border-radius: 4px;
-    border: 2px solid #08090c;
+    border: 2px solid #060709;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #2d3748;
+    background: #2b3348;
   }
 
   /* Accessible focus indicators */
   :focus-visible {
-    outline: 2px solid #6366f1;
+    outline: 2px solid #8b5cf6;
     outline-offset: 3px;
   }
 }
 
 /* Glassmorphism & UI helpers */
 .glass-panel {
-  background: rgba(14, 17, 24, 0.72);
+  background: rgba(12, 15, 23, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
 }
 
 .glass-card {
-  background: rgba(18, 22, 32, 0.6);
+  background: rgba(15, 18, 28, 0.65);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.04);
   transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .glass-card:hover {
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.16);
 }
 
 .border-subtle {
   border-color: rgba(255, 255, 255, 0.08);
 }
 
-/* Subtle glow effects */
+/* Subtle glow effects matching SIDB Brand */
 .glow-accent {
-  box-shadow: 0 0 40px -10px rgba(99, 102, 241, 0.25);
+  box-shadow: 0 0 45px -10px rgba(139, 92, 246, 0.28);
 }
 
 .glow-blue {
-  box-shadow: 0 0 50px -15px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 50px -15px rgba(59, 130, 246, 0.28);
 }
 
-/* Browser mock window frame */
+/* Browser mock window frame with premium elevation */
 .browser-frame {
-  background: #0d1017;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #090c13;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
   overflow: hidden;
-  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 1px 1px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.8), 0 0 1px 1px rgba(255, 255, 255, 0.06);
 }
 
 /* High contrast tag / badge */
@@ -115,9 +117,9 @@
   font-size: 0.75rem;
   font-weight: 500;
   border-radius: 9999px;
-  background: rgba(99, 102, 241, 0.1);
-  color: #a5b4fc;
-  border: 1px solid rgba(99, 102, 241, 0.25);
+  background: rgba(139, 92, 246, 0.12);
+  color: #c4b5fd;
+  border: 1px solid rgba(139, 92, 246, 0.28);
   letter-spacing: 0.025em;
 }
 
@@ -134,3 +136,8 @@
   border: 1px solid rgba(255, 255, 255, 0.09);
 }
 
+/* Subtle dot grid for hero presentation */
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}

@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sidbbrowser.com/sitemap.xml
-
+Sitemap: https://sidb.netlify.app/sitemap.xml
