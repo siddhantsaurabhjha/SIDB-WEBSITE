@@ -1,0 +1,73 @@
+---
+import Icon from './Icon.astro';
+import { siteConfig } from '../data/config';
+---
+
+<section id="about" class="py-20 md:py-28 border-t border-white/[0.08] relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="max-w-3xl">
+      <div class="badge-neutral mb-3">Project Overview</div>
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+        About SIDB
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-slate-300/90 leading-relaxed">
+        SIDB is an independent desktop web browser project designed around personal workflow, user autonomy, and calm computing.
+      </p>
+    </div>
+
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <div class="glass-card rounded-2xl p-6 space-y-3">
+        <h3 class="text-base font-semibold text-white">Open Development</h3>
+        <p class="text-xs sm:text-sm text-slate-300/80 leading-relaxed">
+          SIDB is developed completely in the open. Source code, release tags, verified build checksums, and development roadmaps are hosted publicly on GitHub.
+        </p>
+        <a
+          href={siteConfig.links.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 text-xs text-indigo-400 hover:text-indigo-300 font-medium pt-2"
+        >
+          <span>Explore repository</span>
+          <Icon name="external-link" size={13} class="w-3.5 h-3.5" />
+        </a>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 space-y-3">
+        <h3 class="text-base font-semibold text-white">Modern Engineering</h3>
+        <p class="text-xs sm:text-sm text-slate-300/80 leading-relaxed">
+          Engineered using Electron 45, Chromium 156, React, TypeScript, and SQLite. Every privileged operation is guarded by strict IPC context isolation and system sandboxing.
+        </p>
+        <a
+          href={siteConfig.links.progressReport}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 text-xs text-indigo-400 hover:text-indigo-300 font-medium pt-2"
+        >
+          <span>Read verification notes</span>
+          <Icon name="external-link" size={13} class="w-3.5 h-3.5" />
+        </a>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 space-y-3">
+        <h3 class="text-base font-semibold text-white">User Sovereignty</h3>
+        <p class="text-xs sm:text-sm text-slate-300/80 leading-relaxed">
+          No mandatory accounts, no cloud database synchronization, no marketing telemetry, and no artificial ecosystem barriers. You retain full ownership of your browser.
+        </p>
+        <a
+          href={siteConfig.links.userGuide}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 text-xs text-indigo-400 hover:text-indigo-300 font-medium pt-2"
+        >
+          <span>Read user guide</span>
+          <Icon name="external-link" size={13} class="w-3.5 h-3.5" />
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+

@@ -1,0 +1,84 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { siteConfig } from '../data/config';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = `${siteConfig.name} — ${siteConfig.tagline}`,
+  description = siteConfig.description,
+  image = '/assets/brand/logo.png',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, siteConfig.canonicalDomain).href;
+const ogImageURL = new URL(image, siteConfig.canonicalDomain).href;
+---
+
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="theme-color" content="#07080b" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:site_name" content={siteConfig.name} />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/assets/brand/logo.png" />
+
+    <!-- Preload critical brand asset -->
+    <link rel="preload" href="/assets/brand/logo.png" as="image" type="image/png" />
+    <link rel="preload" href="/assets/screenshots/s1.png" as="image" type="image/png" />
+  </head>
+  <body class="min-h-screen bg-[#07080b] text-slate-100 selection:bg-indigo-500/30 selection:text-white flex flex-col">
+    
+    <!-- Skip to main content for accessibility -->
+    <a 
+      href="#main-content" 
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-white"
+    >
+      Skip to content
+    </a>
+
+    <!-- Sticky Navigation -->
+    <Navbar />
+
+    <!-- Main Content Area -->
+    <main id="main-content" class="flex-1">
+      <slot />
+    </main>
+
+    <!-- Global Footer -->
+    <Footer />
+
+  </body>
+</html>
+

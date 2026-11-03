@@ -1,0 +1,68 @@
+---
+import Icon from './Icon.astro';
+
+const pillars = [
+  {
+    icon: 'cpu',
+    title: 'Familiar Web Compatibility',
+    description:
+      'Built upon modern Chromium (v156 via Electron 45), SIDB supports web standards, high-performance rendering, media playback, and everyday websites exactly as you expect.',
+  },
+  {
+    icon: 'layout',
+    title: 'Thoughtful Desktop Interface',
+    description:
+      'Engineered specifically for desktop workflows. Choose between traditional top tabs or a space-efficient vertical tab rail, complemented by an auto-collapsing smart sidebar.',
+  },
+  {
+    icon: 'shield-check',
+    title: 'Native Shield Protection',
+    description:
+      'Request-level ad, tracker, and popup interception without running third-party extension bloat. Includes best-effort YouTube ad protection and optional Google Safe Browsing.',
+  },
+  {
+    icon: 'database',
+    title: 'Local Sovereignty & SQLite',
+    description:
+      'Your browsing history, bookmarks, and settings are preserved in local SQLite databases. Zero cloud lock-in, zero telemetry pings, and automatic rolling backups.',
+  },
+];
+---
+
+<section id="introduction" class="py-16 md:py-24 border-t border-white/[0.08] relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="max-w-3xl">
+      <div class="badge-neutral mb-3">Product Architecture</div>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white">
+        Built for Speed, Privacy, and Practical Desktop Productivity
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-slate-300/90 leading-relaxed">
+        SIDB combines the robust rendering of Chromium with an independent, local-first architecture. It gives you the full power of modern web standards without browser telemetry, unrequested restarts, or forced cloud accounts.
+      </p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {pillars.map((pillar) => (
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-5">
+              <Icon name={pillar.icon as any} size={20} class="w-5 h-5" />
+            </div>
+            <h3 class="text-base font-semibold text-white tracking-tight">
+              {pillar.title}
+            </h3>
+            <p class="mt-2.5 text-sm text-slate-300/80 leading-relaxed">
+              {pillar.description}
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/[0.05] text-[11px] font-mono text-slate-400">
+            Verified v0.1.0 Feature
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+

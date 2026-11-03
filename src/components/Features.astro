@@ -1,0 +1,87 @@
+---
+import Icon from './Icon.astro';
+import { coreFeatures } from '../data/features';
+
+const categoryLabels: Record<string, string> = {
+  core: 'Core Engine',
+  privacy: 'Privacy & Security',
+  productivity: 'Productivity Workflow',
+  architecture: 'Local Architecture',
+};
+
+const categoryIcons: Record<string, string> = {
+  core: 'cpu',
+  privacy: 'eye-off',
+  productivity: 'command',
+  architecture: 'database',
+};
+---
+
+<section id="features" class="py-20 md:py-32 border-t border-white/[0.08] relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="max-w-3xl mb-16">
+      <div class="badge-neutral mb-3">Verified Capabilities</div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+        Engineered for Control, Stability & Daily Flow
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-slate-300/90 leading-relaxed">
+        SIDB is built around real desktop browser needs. Every feature listed here is verified in release v0.1.0 and runs locally without hidden dependencies.
+      </p>
+    </div>
+
+    <!-- Feature Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {coreFeatures.map((feature) => (
+        <div class="glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between group">
+          <div>
+            
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-indigo-400 group-hover:border-indigo-500/30 group-hover:bg-indigo-500/10 transition-colors">
+                <Icon name={categoryIcons[feature.category] as any} size={20} class="w-5 h-5" />
+              </div>
+              <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 px-2 py-0.5 rounded bg-white/[0.03] border border-white/[0.06]">
+                {categoryLabels[feature.category]}
+              </span>
+            </div>
+
+            <h3 class="text-lg font-bold text-white tracking-tight">
+              {feature.title}
+            </h3>
+
+            <p class="mt-1 text-xs font-medium text-indigo-300/90">
+              {feature.tagline}
+            </p>
+
+            <p class="mt-3 text-sm text-slate-300/80 leading-relaxed">
+              {feature.description}
+            </p>
+
+            <!-- Verification Bullets -->
+            <ul class="mt-5 space-y-2 pt-4 border-t border-white/[0.05]">
+              {feature.bulletPoints.map((point) => (
+                <li class="flex items-start gap-2 text-xs text-slate-300/90 leading-normal">
+                  <Icon name="check" size={13} class="w-3.5 h-3.5 text-indigo-400 shrink-0 mt-0.5" />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+
+          </div>
+
+          <div class="mt-6 pt-3 flex items-center justify-between text-[11px] font-mono text-slate-400">
+            <span>Desktop Native</span>
+            <span class="text-emerald-400/90 flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span>
+              v0.1.0 Verified
+            </span>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
